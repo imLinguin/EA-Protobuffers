@@ -219,48 +219,6 @@ message GepGameEnvironmentData {
     uint32 egsProxyIpcPort = 20;
 }
 
-message CheckClientRunningReq {
-    bool rtpLaunchPending = 1;
-}
-
-message CheckClientRunningResp {
-    bool running = 1;
-}
-
-message CheckUpdateInformationReq {
-    bool wakeFromIdle = 1;
-}
-
-message CheckUpdateInformationResp {
-    UpdateInformation updateInfo = 1;
-}
-
-message CheckVersionReq {
-    
-}
-
-message CheckVersionResp {
-    string version = 1;
-    string location = 2;
-    string environment = 3;
-}
-
-message AcceptUpdateReq {
-    
-}
-
-message AcceptUpdateResp {
-    
-}
-
-message BeginUpdateReq {
-    
-}
-
-message BeginUpdateResp {
-    int32 result = 1;
-}
-
 message GetCatalogStoreReq {
     
 }
@@ -384,10 +342,6 @@ message UpdaterStepCompleteNotif {
     UpdateStatus updateStatus = 2;
 }
 
-message UpdateNotif {
-    UpdateInformation updateInfo = 1;
-}
-
 message TelemetryEventNotif {
     string data = 9;
 }
@@ -418,10 +372,6 @@ message ModifyContentErrorData {
     message WrongDiskInserted {
         uint32 expectingDiskNo = 1;
     }
-}
-
-message FocusMainWindowNotif {
-    
 }
 
 message AuthInfoUpdateNotif {
@@ -476,14 +426,6 @@ message ExternalAction {
     uint32 thirdPartyPresence = 19;
     bool isLauncherElevated = 20;
     bool shutdownAfter = 21;
-}
-
-message PopExternalActionReq {
-    
-}
-
-message PopExternalActionResp {
-    repeated ExternalAction externalActions = 1;
 }
 
 message ExternalActionNotif {
