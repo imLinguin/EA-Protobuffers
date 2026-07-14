@@ -32,8 +32,8 @@ message ContentStatus {
     ContentState state = 2;
     ContentState prev_state = 3;
     TransitionCode transition_code = 4;
-    uint64 progress_numerator = 5;
-    uint64 progress_denominator = 6;
+    int64 progress_numerator = 5;
+    int64 progress_denominator = 6;
     ProgressUnit progress_unit = 7;
     string slug = 11;
     float bandwidthBps = 12;
