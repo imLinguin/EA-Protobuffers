@@ -219,48 +219,6 @@ message GepGameEnvironmentData {
     uint32 egsProxyIpcPort = 20;
 }
 
-message CheckClientRunningReq {
-    bool rtpLaunchPending = 1;
-}
-
-message CheckClientRunningResp {
-    bool running = 1;
-}
-
-message CheckUpdateInformationReq {
-    bool wakeFromIdle = 1;
-}
-
-message CheckUpdateInformationResp {
-    UpdateInformation updateInfo = 1;
-}
-
-message CheckVersionReq {
-    
-}
-
-message CheckVersionResp {
-    string version = 1;
-    string location = 2;
-    string environment = 3;
-}
-
-message AcceptUpdateReq {
-    
-}
-
-message AcceptUpdateResp {
-    
-}
-
-message BeginUpdateReq {
-    
-}
-
-message BeginUpdateResp {
-    int32 result = 1;
-}
-
 message GetCatalogStoreReq {
     
 }
@@ -328,20 +286,6 @@ message ResumeElevatedGameResp {
     
 }
 
-message ElevatedLaunchInfoReq {
-    uint32 port = 1;
-}
-
-message ElevatedLaunchInfoResp {
-    string contentId = 1;
-    OfferKey offerKey = 2;
-    string masterTitleId = 3;
-    string execPath = 4;
-    string cmdArgs = 5;
-    uint64 token = 6;
-    bool igoInjectionRequired = 7;
-}
-
 message GameStatusInfoReq {
     string masterTitleId = 1;
     repeated string offerIds = 2;
@@ -357,13 +301,6 @@ message SpaNavigationReq {
 
 message SpaNavigationResp {
     
-}
-
-message GepReadyNotif {
-    uint64 token = 1;
-    string masterTitleId = 2;
-    uint32 port = 3;
-    uint32 gameErrorCode = 4;
 }
 
 message GameStartedSuspendedNotif {
@@ -382,14 +319,6 @@ message UpdaterDownloadProgNotif {
 message UpdaterStepCompleteNotif {
     int32 step = 1;
     UpdateStatus updateStatus = 2;
-}
-
-message UpdateNotif {
-    UpdateInformation updateInfo = 1;
-}
-
-message TelemetryEventNotif {
-    string data = 9;
 }
 
 message ModifyContentErrorData {
@@ -420,26 +349,8 @@ message ModifyContentErrorData {
     }
 }
 
-message FocusMainWindowNotif {
-    
-}
-
 message AuthInfoUpdateNotif {
     AuthInfo authInfo = 1;
-}
-
-message InstallStatusInfoReq {
-    
-}
-
-message InstallStatusInfoResp {
-    repeated ContentInstallInfo installInfos = 1;
-    
-    repeated CatalogInfo catalogInfos = 2;
-    message CatalogInfo {
-        string softwareId = 1;
-        CatalogDefinition catalogDef = 2;
-    }
 }
 
 message ExternalUserInfo {
@@ -476,18 +387,6 @@ message ExternalAction {
     uint32 thirdPartyPresence = 19;
     bool isLauncherElevated = 20;
     bool shutdownAfter = 21;
-}
-
-message PopExternalActionReq {
-    
-}
-
-message PopExternalActionResp {
-    repeated ExternalAction externalActions = 1;
-}
-
-message ExternalActionNotif {
-    
 }
 
 message RequestData {
@@ -566,97 +465,9 @@ message NotifySteamOverlayStateResp {
     
 }
 
-message StartCloudSyncReq {
-    OfferKey offerKey = 1;
-    uint32 syncType = 2;
-    uint32 requestOwner = 3;
-}
-
-message StartCloudSyncResp {
-    string offerId = 1;
-    bool success = 2;
-}
-
-message RestorePrivilegedBackupReq {
-    string offerId = 1;
-    string entitlementId = 3;
-    string userId = 4;
-}
-
-message RestorePrivilegedBackupResp {
-    string offerId = 1;
-    bool isRestoreStarted = 2;
-}
-
-message PrivilegedBackupRestoredNotif {
-    string offerId = 1;
-    int32 result = 2;
-}
-
-message CloudSyncStatusNotif {
-    string cloudId = 1;
-    uint32 syncStatus = 2;
-    uint64 localDataTimestamp = 3;
-    uint64 remoteDataTimestamp = 4;
-}
-
-message ResolveCloudSyncConflictReq {
-    string cloudId = 1;
-    uint32 resolution = 2;
-}
-
-message ResolveCloudSyncConflictResp {
-    
-}
-
 message GameLaunchPending {
     string gameLaunchArgument = 1;
     RequestData requestData = 2;
-}
-
-message Link2EAReq {
-    ExternalUserInfo userInfo = 1;
-    string externalAppId = 2;
-    RequestData requestData = 3;
-    string cmdParams = 4;
-    string launchHelperArgument = 5;
-    string platformType = 6;
-    GameInvite gameInvite = 7;
-    string cookieToInject = 8;
-    uint32 thirdPartyPresence = 10;
-}
-
-message Link2EAResp {
-    
-}
-
-message Link2EAPendingRequest {
-    string launchHelperArgument = 1;
-    RequestData requestData = 2;
-}
-
-message Link2EAPendingRequestResp {
-    
-}
-
-message ClearLink2EAPendingRequest {
-    bool requestCameFromLink2Ea = 1;
-}
-
-message ClearLink2EAPendingRequestResp {
-    
-}
-
-message ClearLink2EAPendingNotif {
-    
-}
-
-message ProfilerControlReq {
-    bool setActive = 1;
-}
-
-message ProfilerControlResp {
-    
 }
 
 message LaunchAppReq {
@@ -665,18 +476,6 @@ message LaunchAppReq {
 }
 
 message LaunchAppResp {
-    
-}
-
-message CheckBgsFileAccessReq {
-    string fileName = 1;
-}
-
-message CheckBgsFileAccessResp {
-    bool hasAccess = 1;
-}
-
-message ShutdownBgsReq {
     
 }
 
