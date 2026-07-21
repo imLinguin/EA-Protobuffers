@@ -154,25 +154,6 @@ message Entitlement {
     repeated string childEntitlements = 6;
 }
 
-message GameStatusInfo {
-    ContentInstallInfo contentInstallInfo = 1;
-    Entitlement entitlement = 2;
-    bool isGameRunning = 3;
-    BuildMetadata liveMetadata = 4;
-}
-
-message AuthInfo {
-    bool authenticated = 1;
-    bool isInvisible = 2;
-    string accessToken = 3;
-    string authCode = 4;
-    string sessionId = 5;
-    uint64 expiresInMs = 7;
-    uint64 systemTime = 8;
-    uint64 trustedTime = 9;
-    uint64 expiresAtTime = 10;
-}
-
 message PersonaeInfo {
     string eaPersonaId = 2;
     string correlationId = 3;
@@ -286,23 +267,6 @@ message ResumeElevatedGameResp {
     
 }
 
-message GameStatusInfoReq {
-    string masterTitleId = 1;
-    repeated string offerIds = 2;
-}
-
-message GameStatusInfoResp {
-    repeated GameStatusInfo statusInfos = 1;
-}
-
-message SpaNavigationReq {
-    uint32 destination = 1;
-}
-
-message SpaNavigationResp {
-    
-}
-
 message GameStartedSuspendedNotif {
     GameRunStatus gameRunStatus = 3;
 }
@@ -349,10 +313,6 @@ message ModifyContentErrorData {
     }
 }
 
-message AuthInfoUpdateNotif {
-    AuthInfo authInfo = 1;
-}
-
 message ExternalUserInfo {
     string authCode = 1;
     string idToken = 2;
@@ -395,20 +355,6 @@ message RequestData {
     int64 param1 = 3;
     string param2 = 4;
     uint64 requestTimestamp = 5;
-}
-
-message LaunchGameReq {
-    ExternalUserInfo userInfo = 1;
-    OfferKey offerKey = 2;
-    RequestData requestData = 3;
-    string cmdParams = 4;
-    string slug = 5;
-    string offerId = 6;
-    string launchHelperArgument = 7;
-}
-
-message LaunchGameResp {
-    bool requestAccepted = 1;
 }
 
 message GrantAchievementNotif {
