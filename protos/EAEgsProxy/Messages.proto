@@ -177,29 +177,6 @@ message GameRunStatus {
     uint32 requestSource = 9;
 }
 
-message GepGameEnvironmentData {
-    string nucleusToken = 1;
-    string authCode = 2;
-    string serialKey = 3;
-    string rtpCode = 4;
-    string sessionKey = 5;
-    string gameLocale = 6;
-    string environment = 7;
-    string eaId = 8;
-    string contentId = 9;
-    OfferKey offerKey = 10;
-    bool freeTrial = 11;
-    bool offlineMode = 12;
-    bool requireAllowVms = 13;
-    string igoLogDirPath = 14;
-    string igoCacheDirPath = 15;
-    string gameSessionId = 16;
-    uint32 lsxPort = 17;
-    string steamAppId = 18;
-    uint32 steamProxyIpcPort = 19;
-    uint32 egsProxyIpcPort = 20;
-}
-
 message GetCatalogStoreReq {
     
 }
@@ -245,34 +222,12 @@ message ReloadEntitlementsResp {
     
 }
 
-message LaunchElevatedGameReq {
-    string masterTitleId = 1;
-    OfferKey offerKey = 2;
-    string workingDirectory = 3;
-    GepGameEnvironmentData gameEnvironmentData = 4;
-    string cmdParams = 5;
-}
-
-message LaunchElevatedGameResp {
-    string masterTitleId = 1;
-    uint64 token = 2;
-    int32 gameErrorCode = 3;
-}
-
 message ResumeElevatedGameReq {
     uint64 token = 1;
 }
 
 message ResumeElevatedGameResp {
     
-}
-
-message GameStartedSuspendedNotif {
-    GameRunStatus gameRunStatus = 3;
-}
-
-message GameResumedNotif {
-    GameRunStatus gameRunStatus = 1;
 }
 
 message UpdaterDownloadProgNotif {
