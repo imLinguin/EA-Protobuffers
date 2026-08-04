@@ -222,14 +222,6 @@ message ReloadEntitlementsResp {
     
 }
 
-message ResumeElevatedGameReq {
-    uint64 token = 1;
-}
-
-message ResumeElevatedGameResp {
-    
-}
-
 message UpdaterDownloadProgNotif {
     int64 bytesReceived = 1;
     int64 bytesTotal = 2;
