@@ -326,13 +326,6 @@ message GetEpicAccessTokenResp {
     uint64 expiresAtS = 2;
 }
 
-message SteamOverlayToStoreNotif {
-    string appId = 1;
-    string offerId = 2;
-    bool isBaseGame = 3;
-    uint32 flag = 4;
-}
-
 message SteamPurchaseConfirmationReq {
     uint64 orderId = 1;
     bool isAuthorized = 2;
