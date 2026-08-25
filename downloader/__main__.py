@@ -80,19 +80,16 @@ for exe in os.listdir('temp'):
         file_location = os.path.join('temp', exe)
         output_dir = 'extracted_protos/' + exe.split('.')[0]
 
-        env = os.environ.copy()
 
         if pbtk_from_binary_cmd:
             subprocess.run(
                 [pbtk_from_binary_cmd, file_location, output_dir],
-                check=False,
-                env=env
+                check=True
             )
         else:
             subprocess.run(
                 [sys.executable, '-m', 'pbtk.extractors.from_binary', file_location, output_dir],
-                check=False,
-                env=env
+                check=True
             )
 
 def move_exe_folders_to_protos(source_root: str, target_root: str) -> None:
