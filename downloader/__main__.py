@@ -80,7 +80,6 @@ for exe in os.listdir('temp'):
         file_location = os.path.join('temp', exe)
         output_dir = 'extracted_protos/' + exe.split('.')[0]
 
-
         if pbtk_from_binary_cmd:
             subprocess.run(
                 [pbtk_from_binary_cmd, file_location, output_dir],
